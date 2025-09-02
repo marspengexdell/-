@@ -72,6 +72,11 @@ export const GDD_SECTIONS: Section[] = [
     description: 'Enemies are designed to be more than just obstacles; they are reactive combatants that test the player\'s mastery of the game\'s mechanics. Our AI philosophy emphasizes readability, reactivity, and creating dynamic combat puzzles.'
   },
   {
+    id: 'ability-upgrades',
+    title: 'Ability System & Upgrades',
+    description: 'Players discover powerful abilities and augments during each run, allowing for dynamic build creation and synergies that dramatically alter combat.'
+  },
+  {
     id: 'controls',
     title: 'Player Controls',
     description: 'The game utilizes a classic keyboard layout for precise 2D action-platforming.',

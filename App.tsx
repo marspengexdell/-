@@ -176,7 +176,10 @@ const App: React.FC = () => {
                             </div>
                             <div>
                                 <h5 className="font-semibold text-red-300">Attack Patterns</h5>
-                                <p className="text-sm text-gray-400">Uses a mix of quick 2-3 hit combos and a slower, telegraphed heavy attack that breaks blocks.</p>
+                                <ul className="list-disc list-inside text-sm text-gray-400 space-y-2">
+                                  <li><span className="font-medium text-gray-300">Three-Hit Combo:</span> A rapid sequence (Jab &rarr; Jab &rarr; Cross) designed to overwhelm the player. The final hit has increased knockback.</li>
+                                  <li><span className="font-medium text-gray-300">Heavy Slam:</span> A slow, telegraphed overhead attack. The Brawler's weapon glows red, signaling an unblockable, high-damage move that must be parried or dodged.</li>
+                                </ul>
                             </div>
                             <div>
                                 <h5 className="font-semibold text-red-300">Defensive Tactics</h5>
@@ -192,7 +195,11 @@ const App: React.FC = () => {
                             </div>
                              <div>
                                 <h5 className="font-semibold text-red-300">Attack Patterns</h5>
-                                <p className="text-sm text-gray-400">Fires ranged projectiles at a consistent rhythm. Has a close-range "get off me" pushback attack if cornered.</p>
+                                <ul className="list-disc list-inside text-sm text-gray-400 space-y-2">
+                                    <li><span className="font-medium text-gray-300">Standard Bolt:</span> Fires a quick, straight-flying energy projectile. Can be parried back at the Skirmisher.</li>
+                                    <li><span className="font-medium text-gray-300">Charged Shot:</span> A brief charge-up animation precedes a larger, slightly slower projectile that has minor homing capabilities.</li>
+                                    <li><span className="font-medium text-gray-300">Point-Blank Shot:</span> If the player gets too close, it performs a quick evasive hop backwards while firing a shotgun-like spread to create space.</li>
+                                </ul>
                             </div>
                              <div>
                                 <h5 className="font-semibold text-red-300">Defensive Tactics</h5>
@@ -209,12 +216,60 @@ const App: React.FC = () => {
                         </div>
                         <div>
                             <h5 className="font-semibold text-red-300">Attack Patterns</h5>
-                            <p className="text-sm text-gray-400">Utilizes powerful, wide-arcing swings with significant wind-up and recovery. May also have a ground-stomp area-of-effect (AoE) attack to punish players who stay too close.</p>
+                             <ul className="list-disc list-inside text-sm text-gray-400 space-y-2">
+                                <li><span className="font-medium text-gray-300">Horizontal Sweep:</span> A wide, 180-degree cleave. Telegraph: The Guardian pulls its weapon back horizontally, with a faint trail of light tracing the attack's path before it swings.</li>
+                                <li><span className="font-medium text-gray-300">Ground Stomp:</span> A powerful AoE attack. Telegraph: The Guardian raises a foot high, and the ground around it cracks with red energy for a full second before the stomp, defining the damage radius.</li>
+                            </ul>
                         </div>
                         <div>
                             <h5 className="font-semibold text-red-300">Defensive Tactics</h5>
                             <p className="text-sm text-gray-400">Frequently enters a blocking stance that deflects most attacks. Can only be damaged consistently after a parry or during its attack recovery. A failed player parry may trigger a powerful counter-attack.</p>
                         </div>
+                    </div>
+                  </div>
+                </SectionCard>
+              )}
+              {section.id === 'ability-upgrades' && (
+                <SectionCard title={section.title} id={section.id}>
+                  <p className="mb-8 text-gray-400">{section.description}</p>
+                  <div className="space-y-8">
+                    <div className="bg-gray-800/50 p-6 rounded-lg border border-gray-700">
+                      <h4 className="text-xl font-bold text-red-400 mb-3">Unlocking New Abilities: Shrines of the Forgotten</h4>
+                      <p className="text-gray-400 mb-4">New active abilities are not tied to a skill tree but are discovered as rare rewards within the labyrinth. Interacting with a "Shrine of the Forgotten" will bestow a new power upon the player.</p>
+                      <p className="font-semibold text-gray-300">Visual Feedback:</p>
+                      <ul className="list-disc list-inside text-gray-400 mt-2 pl-2">
+                        <li>A bright, ethereal light envelops the player character upon acquisition.</li>
+                        <li>A UI notification prominently displays the icon and name of the new ability.</li>
+                        <li>A new icon is permanently added to the player's HUD, showing its availability and cooldown.</li>
+                      </ul>
+                    </div>
+
+                    <div className="bg-gray-800/50 p-6 rounded-lg border border-gray-700">
+                      <h4 className="text-xl font-bold text-red-400 mb-3">The Augment System: Enhancing Your Toolkit</h4>
+                      <p className="text-gray-400 mb-6">Once an ability is unlocked, players can find "Augments" to modify its function. These are passive upgrades found from elite enemies or in hidden caches. Each ability can have one Augment applied at a time, forcing meaningful choices.</p>
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                          <div className="bg-gray-900/60 p-4 rounded-md border border-gray-600">
+                            <h5 className="font-semibold text-red-300">Dash Augment: Phase Echo</h5>
+                            <p className="text-sm text-gray-400">Your Dash leaves an unstable echo at your starting position, or on the first enemy you pass through. The echo explodes for 50% weapon damage after 1 second.</p>
+                          </div>
+                          <div className="bg-gray-900/60 p-4 rounded-md border border-gray-600">
+                            <h5 className="font-semibold text-red-300">Dash Augment: Kinetic Burst</h5>
+                            <p className="text-sm text-gray-400">Upon landing after a Dash, release a small shockwave that deals 25% of your base weapon damage in an area around you.</p>
+                          </div>
+                          <div className="bg-gray-900/60 p-4 rounded-md border border-gray-600 md:col-span-2">
+                            <h5 className="font-semibold text-red-300">Parry Augment: Vengeful Riposte</h5>
+                            <p className="text-sm text-gray-400">Successfully parrying an attack unleashes a shockwave, staggering and lightly damaging nearby enemies.</p>
+                          </div>
+                      </div>
+                    </div>
+                    
+                    <div className="bg-gray-800/50 p-6 rounded-lg border border-gray-700">
+                      <h4 className="text-xl font-bold text-red-400 mb-3">Synergies & Player Expression</h4>
+                      <p className="text-gray-400 mb-4">The true depth of the system emerges from combining augments. We will design these explicitly to create powerful, emergent strategies.</p>
+                      <div className="bg-gray-900/60 p-4 rounded-md border border-gray-600">
+                          <h5 className="font-semibold text-red-300">Example Synergy: "Echoing Vengeance"</h5>
+                          <p className="text-sm text-gray-400">A player with both the <span className="font-bold text-red-400">Phase Echo</span> Dash and <span className="font-bold text-red-400">Vengeful Riposte</span> Parry can Dash through a group of enemies, leaving an echo in their midst, and then immediately parry an incoming attack. This triggers both the echo's explosion and the parry's shockwave simultaneously for massive area-of-effect damage and control.</p>
+                      </div>
                     </div>
                   </div>
                 </SectionCard>
